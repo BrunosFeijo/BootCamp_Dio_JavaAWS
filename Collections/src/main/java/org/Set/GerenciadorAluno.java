@@ -2,6 +2,7 @@ package org.Set;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class GerenciadorAluno {
     private Set<Aluno> alunoSet;
@@ -29,5 +30,23 @@ public class GerenciadorAluno {
             System.out.println("Matricula não encontrada");
         }
     }
-    
+    public void exibirAlunosPorNome(){
+        if(!alunoSet.isEmpty()){
+            Set<Aluno> alunosPorNome = new TreeSet<>(alunoSet);
+            System.out.println(alunosPorNome);
+        }else {
+            throw new RuntimeException("O conjunto está vazio!");
+        }
+    }
+    public void exibirAlunosPorNota(){
+        if (!alunoSet.isEmpty()){
+            Set<Aluno> alunosPorNota = new TreeSet<>(new CompararNota());
+            alunosPorNota.addAll(alunoSet);
+            System.out.println(alunosPorNota);
+        }else {
+            throw new RuntimeException("O conjunto está vazio!");
+        }
+
+    }
+
 }
