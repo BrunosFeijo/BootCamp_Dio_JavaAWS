@@ -32,4 +32,7 @@ public class OrdenacaoPessoa {
         }
     }
 
+    public List<Pessoa> getPessoaList() {
+        return pessoaList;
+    }
 }
