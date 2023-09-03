@@ -25,13 +25,20 @@ public class AgendaEventos {
         }
     }
     public void obterProximoEvento(){
+        Map<LocalDate, Evento> eventosTreeMap = new TreeMap<>(eventosMap);
         LocalDate dataAtual = LocalDate.now();
         LocalDate proximaData = null;
         Evento proximoEvento = null;
 
-        for(Map.Entry<LocalDate, Evento> entry: eventosMap.entrySet()){
+        for(Map.Entry<LocalDate, Evento> entry: eventosTreeMap.entrySet()){
             LocalDate dataEvento = entry.getKey();
-            if (dataEvento.isEqual(dataAtual) || dataEvento.isAfter(dataAtual)){
+            if (dataEvento.isEqual(dataAtual)){
+//                proximaData = dataEvento;
+                proximoEvento = entry.getValue();
+                System.out.println("O próximo evento: " + proximoEvento.getNome() +
+                        " acontecerá na data " + dataAtual);
+                return;
+            } else if (dataEvento.isAfter(dataAtual)) {
                 proximaData = dataEvento;
                 proximoEvento = entry.getValue();
                 System.out.println("O próximo evento: " + proximoEvento.getNome() +
