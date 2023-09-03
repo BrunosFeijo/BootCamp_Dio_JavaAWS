@@ -25,6 +25,20 @@ public class AgendaEventos {
         }
     }
     public void obterProximoEvento(){
-        
+        LocalDate dataAtual = LocalDate.now();
+        LocalDate proximaData = null;
+        Evento proximoEvento = null;
+
+        for(Map.Entry<LocalDate, Evento> entry: eventosMap.entrySet()){
+            LocalDate dataEvento = entry.getKey();
+            if (dataEvento.isEqual(dataAtual) || dataEvento.isAfter(dataAtual)){
+                proximaData = dataEvento;
+                proximoEvento = entry.getValue();
+                System.out.println("O próximo evento: " + proximoEvento.getNome() +
+                        " acontecerá na data " + proximaData);
+                return;
+            }
+        }
+        System.out.println("Não há eventos futuros na agenda.");
     }
 }
