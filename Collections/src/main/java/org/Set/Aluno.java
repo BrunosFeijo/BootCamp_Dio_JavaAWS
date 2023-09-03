@@ -3,7 +3,7 @@ package org.Set;
 import java.util.Comparator;
 import java.util.Objects;
 
-public class Aluno implements Comparable<Aluno>{
+public class Aluno implements Comparable<Aluno> {
     private String nome;
     private Long matricula;
     private double media;
@@ -43,10 +43,20 @@ public class Aluno implements Comparable<Aluno>{
     public int compareTo(Aluno o) {
         return nome.compareToIgnoreCase(o.getNome());
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "nome='" + nome + '\'' +
+                ", matricula=" + matricula +
+                ", media=" + media +
+                '}' + "\n";
+    }
 }
-class CompararNota implements Comparator<Aluno>{
+
+class CompararNota implements Comparator<Aluno> {
     @Override
     public int compare(Aluno o1, Aluno o2) {
-        return Double.compare(o1.getMedia(),o2.getMedia());
+        return Double.compare(o1.getMedia(), o2.getMedia());
     }
 }

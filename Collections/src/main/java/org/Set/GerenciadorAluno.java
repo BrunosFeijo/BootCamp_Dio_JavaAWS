@@ -49,4 +49,7 @@ public class GerenciadorAluno {
 
     }
 
+    public Set<Aluno> getAlunoSet() {
+        return alunoSet;
+    }
 }
