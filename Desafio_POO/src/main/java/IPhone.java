@@ -3,6 +3,15 @@ import Dispositivos.NavegadorNaInternet;
 import Dispositivos.ReprodutorMusical;
 
 public class IPhone implements AparelhoTelefonico, NavegadorNaInternet, ReprodutorMusical {
+    private int modelo;
+
+    public IPhone(int modelo) {
+        this.modelo = modelo;
+    }
+
+    public int getModelo() {
+        return modelo;
+    }
 
     @Override
     public void ligar() {

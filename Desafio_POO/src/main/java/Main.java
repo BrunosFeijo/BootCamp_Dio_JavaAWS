@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        IPhone iphone = new IPhone();
+        IPhone iphone = new IPhone(1);
+        System.out.println("Modelo: IPhone " + iphone.getModelo());
         System.out.println("-----Navegador-----");
         iphone.adicionarNovaAba();
         iphone.exibirPagina();
