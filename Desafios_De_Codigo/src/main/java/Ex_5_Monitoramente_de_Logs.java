@@ -1,3 +1,5 @@
+import java.util.*;
+
 //Descrição
 //Neste desafio, você deve criar um programa em Java para realizar o monitoramento e análise de logs gerados na infraestrutura da AWS (Amazon Web Services). O programa receberá informações de eventos de diferentes serviços da AWS e realizará uma análise simples desses logs.
 //Entrada
@@ -17,5 +19,35 @@
 //Menor:{Nome do Serviço AWS}
 //* Tenha como verdade que sempre teremos um serviço com maior incidência e outro com menor, ou seja, nunca teríamos um empate. Veja exemplos abaixo.
 public class Ex_5_Monitoramente_de_Logs {
-    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int quantidadeLogs = scanner.nextInt();
+        scanner.nextLine(); // Limpar o buffer do scanner
+
+        Map<String, Long> eventosPorServico = new HashMap<>();
+        for (int i = 0; i < quantidadeLogs; i++) {
+            String[] parts = scanner.nextLine().split(",");
+            String servico = parts[1];
+            //TODO: Utilize o mapa para registrar/incrementar o serviço em questão.
+//            if (!eventosPorServico.containsKey(servico)){
+//                eventosPorServico.put(servico,1L);
+//            }else {
+//                eventosPorServico.put(servico,eventosPorServico.get(servico) + 1);
+//            }
+            eventosPorServico.put(servico, eventosPorServico.getOrDefault(servico, 0L) + 1);
+        }
+
+        //TODO: Identifique no mapa os serviços com maior e menor quantidade de logs.
+        //      Dica: Utilize Java Streams para tornar essa tarefa mais simples.
+        String maior = eventosPorServico.entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).get();
+        String menor = eventosPorServico.entrySet().stream().min(Map.Entry.comparingByValue()).map(Map.Entry::getKey).get();
+
+        //TODO: Imprima a saída no padrão definido no enunciado deste desafio.
+        System.out.println("Eventos por servico:");
+        for (Map.Entry<String, Long> entry : eventosPorServico.entrySet()) {
+            System.out.println(entry.getKey() + ":" + entry.getValue());
+        }
+        System.out.println("Maior:" + maior);
+        System.out.println("Menor:" + menor);
+    }
 }
