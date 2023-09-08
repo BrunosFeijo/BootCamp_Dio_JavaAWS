@@ -1,8 +1,12 @@
-public class IPhone implements AparelhoTelefonico, NavegadorNaInternet, ReprodutorMusical{
+import Dispositivos.AparelhoTelefonico;
+import Dispositivos.NavegadorNaInternet;
+import Dispositivos.ReprodutorMusical;
+
+public class IPhone implements AparelhoTelefonico, NavegadorNaInternet, ReprodutorMusical {
 
     @Override
     public void ligar() {
-        System.out.println("IPhone ligado!");
+        System.out.println("Chamada iniciada!");
     }
 
     @Override
