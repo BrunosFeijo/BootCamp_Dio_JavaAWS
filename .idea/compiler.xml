@@ -12,5 +12,10 @@
         <module name="Testes_Unitarios_JUnit" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Testes_Unitarios_JUnit_Gradle.Testes_Unitarios_JUnit_Gradle" target="18" />
+      <module name="Testes_Unitarios_JUnit_Gradle.Testes_Unitarios_JUnit_Gradle.main" target="18" />
+      <module name="Testes_Unitarios_JUnit_Gradle.Testes_Unitarios_JUnit_Gradle.test" target="18" />
+    </bytecodeTargetLevel>
   </component>
 </project>

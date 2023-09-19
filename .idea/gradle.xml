@@ -13,7 +13,6 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/Testes_Unitarios_JUnit_Gradle" />
-            <option value="$PROJECT_DIR$/Testes_Unitarios_JUnit_Gradle/Testes_Unitarios_JUnit_Gradle" />
           </set>
         </option>
       </GradleProjectSettings>
