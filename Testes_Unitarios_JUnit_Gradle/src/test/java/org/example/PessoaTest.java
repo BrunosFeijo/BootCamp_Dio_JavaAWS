@@ -1,7 +1,7 @@
 package org.example;
 
 import org.junit.jupiter.api.Assertions;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
 
@@ -24,5 +24,4 @@ public class PessoaTest {
         Pessoa pessoa =new Pessoa("Pessoa 1",LocalDateTime.now());
         Assertions.assertSame(pessoa,pessoa);
     }
-
 }
