@@ -50,5 +50,5 @@ public class AssertionsTeste {
         int y = 6;
         assertNotEquals(x,y);
     }
-    
+
 }
