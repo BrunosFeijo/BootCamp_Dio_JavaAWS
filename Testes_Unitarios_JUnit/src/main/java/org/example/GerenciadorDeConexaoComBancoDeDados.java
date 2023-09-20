@@ -4,7 +4,7 @@ import java.util.logging.Logger;
 
 public class GerenciadorDeConexaoComBancoDeDados {
     private static final Logger LOGGER = Logger.getLogger(GerenciadorDeConexaoComBancoDeDados.class.getName());
-    private static void iniciarConexao(){
+    public static void iniciarConexao(){
         //fez algo
         LOGGER.info("Iniciou conexao");
     }
