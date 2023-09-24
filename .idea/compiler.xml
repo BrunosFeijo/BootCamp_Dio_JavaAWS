@@ -9,6 +9,7 @@
         <module name="Collections" />
         <module name="Desafios_De_Codigo" />
         <module name="Desafio_POO" />
+        <module name="Desafios_De_Padroes_De_Projeto" />
         <module name="Testes_Unitarios_JUnit" />
       </profile>
     </annotationProcessing>
